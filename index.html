@@ -239,6 +239,39 @@
     </div>
 
   </div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
+  const recarregar = [...document.querySelectorAll("*")].find(el =>
+    el.children.length === 0 &&
+    el.textContent.trim() === "Recarregar"
+  );
+
+  if (!recarregar) return;
+
+  recarregar.style.cursor = "pointer";
+
+  recarregar.addEventListener("click", function () {
+
+    const valor = prompt("Digite o valor que deseja recarregar (MZN):");
+
+    if (valor === null) return;
+
+    const numero = parseFloat(valor.replace(",", "."));
+
+    if (isNaN(numero) || numero <= 0) {
+      alert("Digite um valor válido.");
+      return;
+    }
+
+    alert(
+      "Pedido de recarga criado!\n\n" +
+      "Valor: MZN " + numero.toFixed(2)
+    );
+
+  });
+
+});
+</script>
 </body>
 </html>
