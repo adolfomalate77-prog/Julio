@@ -242,13 +242,7 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-  const recarregar = [...document.querySelectorAll("button")].find(el =>
-  el.textContent.trim() === "Recarregar"
-);
-
-  if (!recarregar) return;
-
-  recarregar.style.cursor = "pointer";
+  const recarregar = document.querySelector(".button");
 
   recarregar.addEventListener("click", function () {
 
@@ -263,6 +257,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
+    alert("Valor digitado: MZN " + numero.toFixed(2));
 
   });
 
