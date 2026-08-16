@@ -242,10 +242,9 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-  const recarregar = [...document.querySelectorAll("*")].find(el =>
-    el.children.length === 0 &&
-    el.textContent.trim() === "Recarregar"
-  );
+  const recarregar = [...document.querySelectorAll("button")].find(el =>
+  el.textContent.trim() === "Recarregar"
+);
 
   if (!recarregar) return;
 
